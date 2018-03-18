@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>515</width>
+    <height>405</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Menu de inicio</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">color: rgb(3, 3, 3);
+background-color: rgb(44, 43, 58);
+font: 10pt &quot;Liberation Sans&quot;;
+color: rgb(252, 252, 252);
+selection-background-color: rgb(155, 155, 185);</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="btn_clientes">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>21</y>
+      <width>62</width>
+      <height>56</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>50</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(123, 117, 154);
+background-color: rgb(168, 168, 168);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Íconos/silueta-masculina-de-usuario.png</normaloff>Íconos/silueta-masculina-de-usuario.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_libros">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>160</y>
+      <width>62</width>
+      <height>56</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(123, 117, 154);
+background-color: rgb(168, 168, 168);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Íconos/herramientas-de-papel-y-lapiz.png</normaloff>Íconos/herramientas-de-papel-y-lapiz.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_proveedores">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>230</y>
+      <width>62</width>
+      <height>56</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(123, 117, 154);
+background-color: rgb(168, 168, 168);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Íconos/tranvia.png</normaloff>Íconos/tranvia.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_reportes">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>300</y>
+      <width>62</width>
+      <height>56</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(123, 117, 154);
+background-color: rgb(168, 168, 168);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Íconos/documento-financiero.png</normaloff>Íconos/documento-financiero.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_ejercicios">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>62</width>
+      <height>56</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(123, 117, 154);
+background-color: rgb(168, 168, 168);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Íconos/calidad-de-la-pagina.png</normaloff>Íconos/calidad-de-la-pagina.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>340</y>
+      <width>181</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>Íconos/logoslamqt_blanco.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>515</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuCLIENTE">
+    <property name="title">
+     <string>Clientes</string>
+    </property>
+    <addaction name="actionClientes"/>
+   </widget>
+   <widget class="QMenu" name="menuASIENTOS">
+    <property name="title">
+     <string>Ejercicios</string>
+    </property>
+    <widget class="QMenu" name="menuCuentas">
+     <property name="title">
+      <string>Cuentas</string>
+     </property>
+     <addaction name="actionBuscar_Cuenta"/>
+     <addaction name="actionNueva_Cuenta"/>
+    </widget>
+    <addaction name="actionEjercicio"/>
+    <addaction name="actionNuevo_Ejercicio"/>
+    <addaction name="menuCuentas"/>
+    <addaction name="actionAsiento"/>
+    <addaction name="actionPlan_Cuentas"/>
+   </widget>
+   <widget class="QMenu" name="menuREPORTES">
+    <property name="title">
+     <string>Reportes</string>
+    </property>
+    <addaction name="actionLibro_Diario_General"/>
+    <addaction name="actionSumas_y_Saldos"/>
+    <addaction name="actionLibro_MAyor"/>
+   </widget>
+   <widget class="QMenu" name="menuCUENTAS">
+    <property name="title">
+     <string>Proveedores</string>
+    </property>
+    <addaction name="actionAlta_de_proveedores"/>
+   </widget>
+   <widget class="QMenu" name="menuLIBROS">
+    <property name="title">
+     <string>Libros</string>
+    </property>
+    <widget class="QMenu" name="menuLibro_IVA_Compras">
+     <property name="title">
+      <string>Libro IVA Compras</string>
+     </property>
+     <addaction name="actionBuscar"/>
+     <addaction name="actionNuevo_2"/>
+    </widget>
+    <widget class="QMenu" name="menuLibro_IVA_Ventas">
+     <property name="title">
+      <string>Libro IVA Ventas</string>
+     </property>
+     <addaction name="actionNuevo"/>
+     <addaction name="actionBuscar_2"/>
+    </widget>
+    <addaction name="actionLIBRO_DIARIO"/>
+    <addaction name="separator"/>
+    <addaction name="menuLibro_IVA_Compras"/>
+    <addaction name="menuLibro_IVA_Ventas"/>
+   </widget>
+   <addaction name="menuCLIENTE"/>
+   <addaction name="menuASIENTOS"/>
+   <addaction name="menuLIBROS"/>
+   <addaction name="menuCUENTAS"/>
+   <addaction name="menuREPORTES"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionEjercicio">
+   <property name="text">
+    <string>Buscar  Ejercicio </string>
+   </property>
+  </action>
+  <action name="actionLIBRO_DIARIO">
+   <property name="text">
+    <string>Libro diario</string>
+   </property>
+  </action>
+  <action name="actionClientes">
+   <property name="text">
+    <string>Clientes / Empresa</string>
+   </property>
+  </action>
+  <action name="actionNuevo_Ejercicio">
+   <property name="text">
+    <string>Nuevo Ejercicio</string>
+   </property>
+  </action>
+  <action name="actionLibro_IVA_Ventas">
+   <property name="text">
+    <string>Libro IVA Ventas</string>
+   </property>
+  </action>
+  <action name="actionLibro_IVA_Compras">
+   <property name="text">
+    <string>Libro IVA Compras</string>
+   </property>
+  </action>
+  <action name="actionLibro_Mayor">
+   <property name="text">
+    <string>Libro Mayor</string>
+   </property>
+  </action>
+  <action name="actionLibro_Diario_General">
+   <property name="text">
+    <string>Libro Diario General</string>
+   </property>
+  </action>
+  <action name="actionSumas_y_Saldos">
+   <property name="text">
+    <string>Sumas y Saldos</string>
+   </property>
+  </action>
+  <action name="actionAlta_de_proveedores">
+   <property name="text">
+    <string>Alta de proveedores</string>
+   </property>
+  </action>
+  <action name="actionNuevo">
+   <property name="text">
+    <string>Nuevo</string>
+   </property>
+  </action>
+  <action name="actionBuscar_Cuenta">
+   <property name="text">
+    <string>Buscar Cuenta</string>
+   </property>
+  </action>
+  <action name="actionPlan_Cuentas">
+   <property name="text">
+    <string>Plan de Cuentas</string>
+   </property>
+  </action>
+  <action name="actionAsiento">
+   <property name="text">
+    <string>Asiento</string>
+   </property>
+  </action>
+  <action name="actionBuscar">
+   <property name="text">
+    <string>Buscar</string>
+   </property>
+  </action>
+  <action name="actionLIBRO_MAYOR">
+   <property name="text">
+    <string>LIBRO MAYOR</string>
+   </property>
+  </action>
+  <action name="actionNuevo_2">
+   <property name="text">
+    <string>Nuevo</string>
+   </property>
+  </action>
+  <action name="actionBuscar_2">
+   <property name="text">
+    <string>Buscar</string>
+   </property>
+  </action>
+  <action name="actionLibro_MAyor">
+   <property name="text">
+    <string>Libro Mayor</string>
+   </property>
+  </action>
+  <action name="actionNueva_Cuenta">
+   <property name="text">
+    <string>Nueva Cuenta</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>btn_clientes</tabstop>
+  <tabstop>btn_ejercicios</tabstop>
+  <tabstop>btn_libros</tabstop>
+  <tabstop>btn_proveedores</tabstop>
+  <tabstop>btn_reportes</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

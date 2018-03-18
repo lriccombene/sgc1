@@ -1,0 +1,172 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'form_ejercicio.ui'
+#
+# Created by: PyQt5 UI code generator 5.5.1
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_form_ejercicio(object):
+    def setupUi(self, form_ejercicio):
+        form_ejercicio.setObjectName("form_ejercicio")
+        form_ejercicio.resize(712, 586)
+        form_ejercicio.setStyleSheet("color: rgb(3, 3, 3);\n"
+"background-color: rgb(44, 43, 58);\n"
+"font: 10pt \"Liberation Sans\";\n"
+"color: rgb(252, 252, 252);\n"
+"selection-background-color: rgb(155, 155, 185);")
+        self.gridLayout_2 = QtWidgets.QGridLayout(form_ejercicio)
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.tabWidget = QtWidgets.QTabWidget(form_ejercicio)
+        self.tabWidget.setStyleSheet("background-color: rgb(44, 43, 58);\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.tabWidget.setObjectName("tabWidget")
+        self.tab = QtWidgets.QWidget()
+        self.tab.setObjectName("tab")
+        self.gridLayout = QtWidgets.QGridLayout(self.tab)
+        self.gridLayout.setObjectName("gridLayout")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.tableWidget = QtWidgets.QTableWidget(self.tab)
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setColumnCount(3)
+        self.tableWidget.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(2, item)
+        self.verticalLayout_3.addWidget(self.tableWidget)
+        self.tw_detalle_ejerc = QtWidgets.QTableWidget(self.tab)
+        self.tw_detalle_ejerc.setStyleSheet("font: 12pt \"Liberation Sans\";\n"
+"")
+        self.tw_detalle_ejerc.setObjectName("tw_detalle_ejerc")
+        self.tw_detalle_ejerc.setColumnCount(3)
+        self.tw_detalle_ejerc.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_detalle_ejerc.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_detalle_ejerc.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_detalle_ejerc.setHorizontalHeaderItem(2, item)
+        self.tw_detalle_ejerc.horizontalHeader().setDefaultSectionSize(195)
+        self.verticalLayout_3.addWidget(self.tw_detalle_ejerc)
+        self.btn_cerrar = QtWidgets.QPushButton(self.tab)
+        self.btn_cerrar.setObjectName("btn_cerrar")
+        self.verticalLayout_3.addWidget(self.btn_cerrar)
+        self.gridLayout.addLayout(self.verticalLayout_3, 1, 0, 1, 1)
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.label = QtWidgets.QLabel(self.tab)
+        self.label.setMinimumSize(QtCore.QSize(75, 0))
+        self.label.setMaximumSize(QtCore.QSize(75, 16777215))
+        self.label.setObjectName("label")
+        self.horizontalLayout.addWidget(self.label)
+        self.ln_nombre = QtWidgets.QLineEdit(self.tab)
+        self.ln_nombre.setMinimumSize(QtCore.QSize(300, 0))
+        self.ln_nombre.setMaximumSize(QtCore.QSize(300, 16777215))
+        self.ln_nombre.setStyleSheet("\n"
+"background-color: rgb(255, 255, 255);\n"
+"color: rgb(0, 0, 0);\n"
+"")
+        self.ln_nombre.setObjectName("ln_nombre")
+        self.horizontalLayout.addWidget(self.ln_nombre)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout.addItem(spacerItem)
+        self.verticalLayout_2.addLayout(self.horizontalLayout)
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.label_2 = QtWidgets.QLabel(self.tab)
+        self.label_2.setMinimumSize(QtCore.QSize(75, 0))
+        self.label_2.setMaximumSize(QtCore.QSize(75, 16777215))
+        self.label_2.setObjectName("label_2")
+        self.horizontalLayout_2.addWidget(self.label_2)
+        self.lne_cuit = QtWidgets.QLineEdit(self.tab)
+        self.lne_cuit.setMinimumSize(QtCore.QSize(150, 0))
+        self.lne_cuit.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.lne_cuit.setStyleSheet("\n"
+"background-color: rgb(255, 255, 255);\n"
+"color: rgb(0, 0, 0);\n"
+"")
+        self.lne_cuit.setObjectName("lne_cuit")
+        self.horizontalLayout_2.addWidget(self.lne_cuit)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem1)
+        self.verticalLayout_2.addLayout(self.horizontalLayout_2)
+        self.horizontalLayout_5.addLayout(self.verticalLayout_2)
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.btn_buscar = QtWidgets.QPushButton(self.tab)
+        self.btn_buscar.setStyleSheet("background-color: rgb(64, 63, 78);")
+        self.btn_buscar.setObjectName("btn_buscar")
+        self.horizontalLayout_3.addWidget(self.btn_buscar)
+        self.btn_actualizar = QtWidgets.QPushButton(self.tab)
+        self.btn_actualizar.setStyleSheet("background-color: rgb(64, 63, 78);")
+        self.btn_actualizar.setObjectName("btn_actualizar")
+        self.horizontalLayout_3.addWidget(self.btn_actualizar)
+        self.verticalLayout.addLayout(self.horizontalLayout_3)
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.btn_eliminar = QtWidgets.QPushButton(self.tab)
+        self.btn_eliminar.setStyleSheet("background-color: rgb(64, 63, 78);")
+        self.btn_eliminar.setObjectName("btn_eliminar")
+        self.horizontalLayout_4.addWidget(self.btn_eliminar)
+        self.btn_nuevo = QtWidgets.QPushButton(self.tab)
+        self.btn_nuevo.setStyleSheet("background-color: rgb(64, 63, 78);")
+        self.btn_nuevo.setObjectName("btn_nuevo")
+        self.horizontalLayout_4.addWidget(self.btn_nuevo)
+        self.verticalLayout.addLayout(self.horizontalLayout_4)
+        self.horizontalLayout_5.addLayout(self.verticalLayout)
+        self.gridLayout.addLayout(self.horizontalLayout_5, 0, 0, 1, 1)
+        self.tabWidget.addTab(self.tab, "")
+        self.gridLayout_2.addWidget(self.tabWidget, 0, 0, 1, 1)
+
+        self.retranslateUi(form_ejercicio)
+        self.tabWidget.setCurrentIndex(0)
+        QtCore.QMetaObject.connectSlotsByName(form_ejercicio)
+        form_ejercicio.setTabOrder(self.tabWidget, self.ln_nombre)
+        form_ejercicio.setTabOrder(self.ln_nombre, self.lne_cuit)
+        form_ejercicio.setTabOrder(self.lne_cuit, self.btn_buscar)
+        form_ejercicio.setTabOrder(self.btn_buscar, self.btn_actualizar)
+        form_ejercicio.setTabOrder(self.btn_actualizar, self.btn_eliminar)
+        form_ejercicio.setTabOrder(self.btn_eliminar, self.btn_nuevo)
+        form_ejercicio.setTabOrder(self.btn_nuevo, self.tw_detalle_ejerc)
+        form_ejercicio.setTabOrder(self.tw_detalle_ejerc, self.btn_cerrar)
+
+    def retranslateUi(self, form_ejercicio):
+        _translate = QtCore.QCoreApplication.translate
+        form_ejercicio.setWindowTitle(_translate("form_ejercicio", "Ejercicio"))
+        item = self.tableWidget.horizontalHeaderItem(0)
+        item.setText(_translate("form_ejercicio", "New Column"))
+        item = self.tableWidget.horizontalHeaderItem(1)
+        item.setText(_translate("form_ejercicio", "New Column"))
+        item = self.tableWidget.horizontalHeaderItem(2)
+        item.setText(_translate("form_ejercicio", "New Column"))
+        item = self.tw_detalle_ejerc.horizontalHeaderItem(0)
+        item.setText(_translate("form_ejercicio", "N°"))
+        item = self.tw_detalle_ejerc.horizontalHeaderItem(1)
+        item.setText(_translate("form_ejercicio", "Mes"))
+        item = self.tw_detalle_ejerc.horizontalHeaderItem(2)
+        item.setText(_translate("form_ejercicio", "Estado"))
+        self.btn_cerrar.setText(_translate("form_ejercicio", "Cerrar"))
+        self.label.setText(_translate("form_ejercicio", "Nombre: "))
+        self.label_2.setText(_translate("form_ejercicio", "CUIT / CUIL: "))
+        self.btn_buscar.setText(_translate("form_ejercicio", "Buscar"))
+        self.btn_actualizar.setText(_translate("form_ejercicio", "Actualizar"))
+        self.btn_eliminar.setText(_translate("form_ejercicio", "Eliminar"))
+        self.btn_nuevo.setText(_translate("form_ejercicio", "Nuevo"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("form_ejercicio", "Ejercicio"))
+
