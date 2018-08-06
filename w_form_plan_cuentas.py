@@ -22,12 +22,15 @@ class plan_cuentas(QDialog):
         self.obj_form.tw_plan_ctas.cellClicked.connect(self.seleccion_item_plan)
 
     def modificar(self):
-        count=0
-        for item in self.lista_plan_cuentas:
-            if self.index == count :
-                obj_plan_cta = E_plan_cuentas()
-                obj_plan_cta.actualizar(item.id_cuenta,self.obj_form.lne_codigo.text(),self.obj_form.lne_descripcion.text())
-            count = count + 1
+        indexes = [QPersistentModelIndex(index) for index in self.obj_form.tw_plan_ctas.selectionModel().selectedRows()]
+        for index in indexes:
+            id = int(self.obj_form.tw_plan_ctas.model().data(self.obj_form.tw_plan_ctas.model().index(index.row(), 2)))
+            codigo = self.obj_form.tw_plan_ctas.model().data(self.obj_form.tw_plan_ctas.model().index(index.row(), 0))
+            descripcion = self.obj_form.tw_plan_ctas.model().data(self.obj_form.tw_plan_ctas.model().index(index.row(), 1))
+
+            obj_plan_cta = E_plan_cuentas()
+            obj_plan_cta.actualizar(id, codigo, descripcion)
+        self.recargar_grilla()
 
     def seleccion_item_plan(self,clickedIndex):
         #pyqtRemoveInputHook()
@@ -55,10 +58,32 @@ class plan_cuentas(QDialog):
         msgBox.setWindowTitle("Atencion")
         msgBox.setText('Se grabo correctamente')
         msgBox.exec_()
+        self.recargar_grilla()
 
 
     def eliminar(self):
-        a=1
+        w = QWidget()
+
+        indexes = [QPersistentModelIndex(index) for index in self.obj_form.tw_plan_ctas.selectionModel().selectedRows()]
+        if len(indexes) > 1:
+            result = QMessageBox.question(w, 'Alerta', "¿Desea eliminar los planes de cuenta?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+        else:
+            result = QMessageBox.question(w, 'Alerta', "¿Desea eliminar el plan de cuenta?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+
+        if result == QMessageBox.Yes:
+            obj_plan_cuentas = E_plan_cuentas()
+            diccionario_ctas = {}
+            for index in indexes:
+                id = int(self.obj_form.tw_plan_ctas.model().data(self.obj_form.tw_plan_ctas.model().index(index.row(), 2)))
+                resultado = obj_plan_cuentas.eliminar(id)
+
+                if resultado:
+                    diccionario_ctas[self.obj_form.tw_plan_ctas.model().data(self.obj_form.tw_plan_ctas.model().index(index.row(), 0))] = self.obj_form.tw_plan_ctas.model().data(self.obj_form.tw_plan_ctas.model().index(index.row(), 1))
+                else:
+                    print(resultado)
+            QMessageBox.about(self, "Acción realizada", "Se han eliminado los siguientes registros: " + str(diccionario_ctas))
+
+            self.recargar_grilla()
 
     def limpiar(self):
         self.obj_cliente=""
@@ -108,15 +133,12 @@ class plan_cuentas(QDialog):
                 self.obj_form.tw_plan_ctas.setItem(rowPosition , 0, QTableWidgetItem(str(item.codigo)))
                 self.obj_form.tw_plan_ctas.setItem(rowPosition , 1, QTableWidgetItem(item.descripcion))
 
-
-
-
-
-
-
-
-
-
+    def recargar_grilla(self):
+        self.limpiar()
+        cuit = self.obj_form.lne_cuit.text()
+        obj_e_cliente = E_cliente()
+        self.obj_cliente = obj_e_cliente.get_cliente_cuit_cuil(cuit)
+        self.cargar_grilla(self.obj_cliente)
 
 
 
