@@ -47,12 +47,16 @@ class cuentas(QDialog):
         obj_e_cuentas = E_cuenta()
         self.lista_cuentas = obj_e_cuentas.get_cuenta_id_asiento(self.asiento.id_asiento)
         for item in self.lista_cuentas:
-            rowPosition = self.obj_form.tw_cuentas.rowCount()
-            self.obj_form.tw_cuentas.insertRow(rowPosition)
-            self.obj_form.tw_asiento.setItem(rowPosition , 0, QTableWidgetItem(str("")))
-            self.obj_form.tw_asiento.setItem(rowPosition , 1, QTableWidgetItem(str(item.id_plan_cuentas)))
-            self.obj_form.tw_asiento.setItem(rowPosition , 2, QTableWidgetItem(str(item.debe)))
-            self.obj_form.tw_asiento.setItem(rowPosition , 3, QTableWidgetItem(str(item.haber)))
+            try:
+                rowPosition = self.obj_form.tw_cuentas.rowCount()
+                self.obj_form.tw_cuentas.insertRow(rowPosition)
+                self.obj_form.tw_asiento.setItem(rowPosition , 0, QTableWidgetItem(str("")))
+                self.obj_form.tw_asiento.setItem(rowPosition , 1, QTableWidgetItem(str(item.id_plan_cuentas)))
+                self.obj_form.tw_asiento.setItem(rowPosition , 2, QTableWidgetItem(str(item.debe)))
+                self.obj_form.tw_asiento.setItem(rowPosition , 3, QTableWidgetItem(str(item.haber)))
+            except:
+                continue
+        self.obj_form.tw_cuentas.sortItems(1, QtCore.Qt.AscendingOrder)
 
 
     def limpiar(self):
