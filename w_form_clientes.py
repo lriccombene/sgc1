@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication,QDialog,QMessageBox, QTableWidgetItem
+from PyQt5.QtWidgets import QApplication,QDialog,QMessageBox, QTableWidgetItem,QWidget
 from PyQt5 import uic
 from form_clientes import Ui_form_clientes
 from PyQt5.QtCore import pyqtRemoveInputHook
@@ -23,9 +23,14 @@ class clientes(QDialog):
     def limpiar(self):
         self.obj_cliente =""
 
+
     def eliminar(self):
-        obj_e_cliente= E_cliente()
-        obj_e_cliente.eliminar(self.obj_cliente.id_cliente)
+        w = QWidget()
+        result = QMessageBox.question(w, 'Alerta', " Dejea eliminar el cliente ?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+
+        if result == QMessageBox.Yes:
+            obj_e_cliente= E_cliente()
+            obj_e_cliente.eliminar(self.obj_cliente.id_cliente)
 
 
 
@@ -108,11 +113,6 @@ class clientes(QDialog):
         self.obj_form.lne_celular.setText(self.obj_cliente.celular)
         self.obj_form.lne_email.setText(self.obj_cliente.email)
         self.obj_form.lne_contacto.setText(self.obj_cliente.nombre_contacto)
-
-        msgBox = QMessageBox()
-        msgBox.setWindowTitle("Atencion")
-        msgBox.setText('Se encontro el cliente')
-        msgBox.exec_()
 
 
 

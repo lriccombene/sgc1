@@ -61,8 +61,8 @@ class E_cliente(base):
                   return obj_cliente_result.id_cliente
 
             except IntegrityError :
-                  obj_party.session.rollback()
-                  obj_party.session.close()
+                  obj_E_cliente.session.rollback()
+                  obj_E_cliente.session.close()
                   return "False"
 
       def get_cliente_razon_social(self, razon_social):
@@ -81,7 +81,7 @@ class E_cliente(base):
                 a = obj_cliente.id_cliente
                 return obj_cliente
             except:
-                return false
+                return False
 
       def get_clientes(self):
             lista_clientes = self.session.query(E_cliente).all()
@@ -102,5 +102,7 @@ class E_cliente(base):
             self.session.close()
 
       def eliminar(self,id_cliente):
-          a=1
-
+          obj_cuenta = self.session.query(E_cliente).filter_by(id_cliente=str(id_cliente)).first()
+          self.session.delete(obj_cuenta)
+          self.session.commit()
+          return True

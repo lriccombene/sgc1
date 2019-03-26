@@ -23,6 +23,7 @@ class ejercicio_nuevo(QDialog):
 
         self.obj_cliente=""
 
+
     def guardar(self):
 
         obj_e_ejercicio = E_ejercicio()
@@ -36,11 +37,12 @@ class ejercicio_nuevo(QDialog):
         fec_ini = self.obj_form.dte_fec_inic.text()
         obj_date_fec_ini = datetime.datetime.strptime(fec_ini, '%d/%m/%Y')
         mes_inicio = obj_date_fec_ini.month
-
+        #pyqtRemoveInputHook()
+        #import pdb; pdb.set_trace()
         for x in range(0,12):
             mes_final=""
             if x == 0 :
-                mes = self.mes(mes_inicio+1)
+                mes = self.mes(mes_inicio)
                 mes_final = mes
             else:
                 #pyqtRemoveInputHook()
@@ -51,24 +53,27 @@ class ejercicio_nuevo(QDialog):
                 mes_final = self.mes(nuevo_mes)
                 if nuevo_mes > 12 and nuevo_mes < 25:
                     mes_final = nuevo_mes % 12
+                    mes_final = self.mes(mes_final)
                     if mes_final == 0:
                         mes_final=self.mes(12)
                         nuevo_year += 1
 
                 mes_final = str(mes_final)
 
-            print (mes_final)
+            #print (mes_final)
             obj_E_ejercicio_detalle = E_ejercicio_detalle()
             mes = self.mes(mes_inicio)
+            
             obj_E_ejercicio_detalle.mes = mes_final
             obj_E_ejercicio_detalle.estado = "abierto"
             obj_E_ejercicio_detalle.id_ejercicio = obj_ejercicio.id_ejercicio
             obj_E_ejercicio_detalle.nro = x
             obj_E_ejercicio_detalle.guardar(obj_E_ejercicio_detalle)
-            msgBox = QMessageBox()
-            msgBox.setWindowTitle("Atencion")
-            msgBox.setText('Se grabo correctamente')
-            msgBox.exec_()
+
+        msgBox = QMessageBox()
+        msgBox.setWindowTitle("Atencion")
+        msgBox.setText('Ejercicio OK')
+        msgBox.exec_()
 
 
     def mes(self,nro):
@@ -112,7 +117,7 @@ class ejercicio_nuevo(QDialog):
             else:
                 msgBox = QMessageBox()
                 msgBox.setWindowTitle("Atencion")
-                msgBox.setText('Cliente se encuentra')
+                msgBox.setText('Cliente OK')
                 msgBox.exec_()
                 self.obj_form.lne_razon_social.setText(self.obj_cliente.razon_social)
 
@@ -126,4 +131,5 @@ class ejercicio_nuevo(QDialog):
             else:
                 a=2
                 #ingrese el cuit nuevamente
+
 

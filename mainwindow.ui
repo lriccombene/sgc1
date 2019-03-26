@@ -6,189 +6,353 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>515</width>
-    <height>405</height>
+    <width>584</width>
+    <height>559</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>550</width>
+    <height>450</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1920</width>
+    <height>1080</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Menu de inicio</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: rgb(3, 3, 3);
-background-color: rgb(44, 43, 58);
-font: 10pt &quot;Liberation Sans&quot;;
-color: rgb(252, 252, 252);
-selection-background-color: rgb(155, 155, 185);</string>
+   <string notr="true">font: 10pt &quot;Liberation Sans&quot;;
+color: rgb(0, 0, 0);
+background-color: rgb(156, 156, 156);
+selection-background-color: rgb(164, 190, 221);
+selection-color: rgb(0, 0, 0);</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="btn_clientes">
-    <property name="geometry">
-     <rect>
-      <x>11</x>
-      <y>21</y>
-      <width>62</width>
-      <height>56</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>50</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(123, 117, 154);
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0" rowspan="2">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QPushButton" name="btn_clientes">
+          <property name="minimumSize">
+           <size>
+            <width>61</width>
+            <height>55</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>61</width>
+            <height>55</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(123, 117, 154);
 background-color: rgb(168, 168, 168);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>Íconos/silueta-masculina-de-usuario.png</normaloff>Íconos/silueta-masculina-de-usuario.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>50</width>
-      <height>50</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_libros">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>160</y>
-      <width>62</width>
-      <height>56</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(123, 117, 154);
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>Íconos/silueta-masculina-de-usuario.png</normaloff>Íconos/silueta-masculina-de-usuario.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_ejercicios">
+          <property name="minimumSize">
+           <size>
+            <width>61</width>
+            <height>55</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>61</width>
+            <height>55</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(123, 117, 154);
 background-color: rgb(168, 168, 168);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>Íconos/herramientas-de-papel-y-lapiz.png</normaloff>Íconos/herramientas-de-papel-y-lapiz.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>50</width>
-      <height>50</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_proveedores">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>230</y>
-      <width>62</width>
-      <height>56</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(123, 117, 154);
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>Íconos/calidad-de-la-pagina.png</normaloff>Íconos/calidad-de-la-pagina.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_libros">
+          <property name="minimumSize">
+           <size>
+            <width>61</width>
+            <height>55</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>61</width>
+            <height>55</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(123, 117, 154);
 background-color: rgb(168, 168, 168);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>Íconos/tranvia.png</normaloff>Íconos/tranvia.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>50</width>
-      <height>50</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_reportes">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>300</y>
-      <width>62</width>
-      <height>56</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(123, 117, 154);
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>Íconos/herramientas-de-papel-y-lapiz.png</normaloff>Íconos/herramientas-de-papel-y-lapiz.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_libro_ventas">
+          <property name="minimumSize">
+           <size>
+            <width>61</width>
+            <height>55</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>61</width>
+            <height>55</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>Íconos/casilla-y-boligrafo.png</normaloff>Íconos/casilla-y-boligrafo.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_proveedores">
+          <property name="minimumSize">
+           <size>
+            <width>61</width>
+            <height>55</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>61</width>
+            <height>55</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(123, 117, 154);
 background-color: rgb(168, 168, 168);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>Íconos/documento-financiero.png</normaloff>Íconos/documento-financiero.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>50</width>
-      <height>50</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_ejercicios">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>90</y>
-      <width>62</width>
-      <height>56</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(123, 117, 154);
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>Íconos/tranvia.png</normaloff>Íconos/tranvia.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_reporte_diario">
+          <property name="minimumSize">
+           <size>
+            <width>61</width>
+            <height>55</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>61</width>
+            <height>55</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(123, 117, 154);
 background-color: rgb(168, 168, 168);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>Íconos/calidad-de-la-pagina.png</normaloff>Íconos/calidad-de-la-pagina.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>50</width>
-      <height>50</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>340</y>
-      <width>181</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>Íconos/logoslamqt_blanco.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>Íconos/documento-financiero.png</normaloff>Íconos/documento-financiero.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_reporte_saldos">
+          <property name="minimumSize">
+           <size>
+            <width>61</width>
+            <height>55</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>61</width>
+            <height>55</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(123, 117, 154);
+background-color: rgb(168, 168, 168);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>Íconos/calculadora.png</normaloff>Íconos/calculadora.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_reporte_mayor">
+          <property name="minimumSize">
+           <size>
+            <width>61</width>
+            <height>55</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>61</width>
+            <height>55</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(123, 117, 154);
+background-color: rgb(168, 168, 168);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>Íconos/maquina-de-facturacion-electronica-con-escaner.png</normaloff>Íconos/maquina-de-facturacion-electronica-con-escaner.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="1">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="label">
+        <property name="minimumSize">
+         <size>
+          <width>161</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>161</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>Íconos/logoslamqt_blanco.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+   <zorder></zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>515</width>
-     <height>16</height>
+     <width>584</width>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuCLIENTE">
@@ -206,13 +370,13 @@ background-color: rgb(168, 168, 168);</string>
       <string>Cuentas</string>
      </property>
      <addaction name="actionBuscar_Cuenta"/>
-     <addaction name="actionNueva_Cuenta"/>
     </widget>
     <addaction name="actionEjercicio"/>
     <addaction name="actionNuevo_Ejercicio"/>
     <addaction name="menuCuentas"/>
     <addaction name="actionAsiento"/>
     <addaction name="actionPlan_Cuentas"/>
+    <addaction name="actionInflacion"/>
    </widget>
    <widget class="QMenu" name="menuREPORTES">
     <property name="title">
@@ -220,11 +384,11 @@ background-color: rgb(168, 168, 168);</string>
     </property>
     <addaction name="actionLibro_Diario_General"/>
     <addaction name="actionSumas_y_Saldos"/>
-    <addaction name="actionLibro_MAyor"/>
+    <addaction name="actionLibro_Mayor_2"/>
    </widget>
    <widget class="QMenu" name="menuCUENTAS">
     <property name="title">
-     <string>Proveedores</string>
+     <string>Proveedores / Clientes</string>
     </property>
     <addaction name="actionAlta_de_proveedores"/>
    </widget>
@@ -236,8 +400,8 @@ background-color: rgb(168, 168, 168);</string>
      <property name="title">
       <string>Libro IVA Compras</string>
      </property>
-     <addaction name="actionBuscar"/>
      <addaction name="actionNuevo_2"/>
+     <addaction name="actionBuscar"/>
     </widget>
     <widget class="QMenu" name="menuLibro_IVA_Ventas">
      <property name="title">
@@ -246,7 +410,6 @@ background-color: rgb(168, 168, 168);</string>
      <addaction name="actionNuevo"/>
      <addaction name="actionBuscar_2"/>
     </widget>
-    <addaction name="actionLIBRO_DIARIO"/>
     <addaction name="separator"/>
     <addaction name="menuLibro_IVA_Compras"/>
     <addaction name="menuLibro_IVA_Ventas"/>
@@ -305,7 +468,7 @@ background-color: rgb(168, 168, 168);</string>
   </action>
   <action name="actionAlta_de_proveedores">
    <property name="text">
-    <string>Alta de proveedores</string>
+    <string>Alta de proveedores / clientes</string>
    </property>
   </action>
   <action name="actionNuevo">
@@ -348,7 +511,7 @@ background-color: rgb(168, 168, 168);</string>
     <string>Buscar</string>
    </property>
   </action>
-  <action name="actionLibro_MAyor">
+  <action name="actionLibro_Mayor_2">
    <property name="text">
     <string>Libro Mayor</string>
    </property>
@@ -358,14 +521,16 @@ background-color: rgb(168, 168, 168);</string>
     <string>Nueva Cuenta</string>
    </property>
   </action>
+  <action name="actionInflacion">
+   <property name="text">
+    <string>Inflacion</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
   <tabstop>btn_clientes</tabstop>
   <tabstop>btn_ejercicios</tabstop>
-  <tabstop>btn_libros</tabstop>
-  <tabstop>btn_proveedores</tabstop>
-  <tabstop>btn_reportes</tabstop>
  </tabstops>
  <resources/>
  <connections/>

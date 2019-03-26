@@ -35,7 +35,7 @@ class E_libro_diario(base):
             try :
                 obj_E_libro_diario.session.commit()
                 obj_E_libro_diario.session.close()
-                return obj_E_asiento
+                return obj_E_libro_diario
 
             except IntegrityError :
                 obj_E_libro_diario.session.rollback()
@@ -43,14 +43,12 @@ class E_libro_diario(base):
                 return "False"
 
       def get_libro_diario_id_asiento(self, id_libro_diario):
-            obj_E_libro_diario = self.session.query(E_obj_E_libro_diario).filter_by(id_libro_diario=str(id_libro_diario)).first()
+            obj_E_libro_diario = self.session.query(E_libro_diario).filter_by(id_libro_diario=str(id_libro_diario)).first()
             self.session.close()
             return obj_E_libro_diario
 
       def actualizar(self,obj_ibro_diario):
-            u = update(E_libro_diario).where(E_libro_diario.id_libro_diarioa == obj_ibro_diario.id_libro_diario).values
-                (id_asiento=obj_ibro_diario.id_asiento, id_cuentas = obj_ibro_diario.id_cuentas,
-                id_ejercicio = obj_ibro_diario.id_ejercicio)
+            u = update(E_libro_diario).where(E_libro_diario.id_libro_diarioa == obj_ibro_diario.id_libro_diario).values(id_asiento=obj_ibro_diario.id_asiento, id_cuentas = obj_ibro_diario.id_cuentas,id_ejercicio = obj_ibro_diario.id_ejercicio)
             self.session.execute(u)
             self.session.commit()
             self.session.close()

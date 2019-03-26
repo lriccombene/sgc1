@@ -1,7 +1,7 @@
 
 import sys
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, DateTime, String, Integer, ForeignKey, func,Boolean, Numeric, update
+from sqlalchemy import Column, DateTime, String, Integer, ForeignKey, func,Boolean, Numeric, update,text
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import IntegrityError
@@ -60,6 +60,8 @@ class E_ejercicio(base):
             return list_ejercicio
 
       def get_ejercicio_id_ejercicio(self, id_ejercicio):
+            #pyqtRemoveInputHook()
+            #import pdb; pdb.set_trace()
             obj_ejercicio = self.session.query(E_ejercicio).filter_by(id_ejercicio=str(id_ejercicio)).first()
             self.session.close()
             return obj_ejercicio
@@ -76,4 +78,17 @@ class E_ejercicio(base):
           self.session.execute(u)
           self.session.commit()
           self.session.close()
+
+      def eliminar_ejercicio(self,id_ejercicio):
+           
+            sql = text('delete from ejercicio where id_ejercicio=' + str(id_ejercicio))
+            result = self.session.execute(sql)
+            try:
+                  self.session.commit()
+                  self.session.close()
+                  return result
+            except:
+                  self.session.close()
+                  return False
+
 

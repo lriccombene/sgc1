@@ -1,8 +1,8 @@
 import sys
-from PyQt5.QtWidgets import QApplication,QDialog,QMessageBox, QTableWidgetItem
+from PyQt5.QtWidgets import QApplication,QDialog,QMessageBox, QTableWidgetItem,QWidget
 from PyQt5 import uic
 from form_plan_cuentas import Ui_form_plan_cuentas
-from PyQt5.QtCore import pyqtRemoveInputHook
+from PyQt5.QtCore import pyqtRemoveInputHook, QPersistentModelIndex
 from E_plan_cuentas import E_plan_cuentas
 from E_cliente import E_cliente
 
@@ -11,6 +11,7 @@ class plan_cuentas(QDialog):
     obj_cliente = ""
     lista_plan_cuentas = ""
     index = ""
+    codigo = 0
 
     def __init__(self):
         QDialog.__init__(self)
@@ -19,26 +20,37 @@ class plan_cuentas(QDialog):
         self.obj_form.btn_buscar.clicked.connect(self.buscar)
         self.obj_form.btn_agregar.clicked.connect(self.agregar)
         self.obj_form.btn_modificar.clicked.connect(self.modificar)
-        self.obj_form.tw_plan_ctas.cellClicked.connect(self.seleccion_item_plan)
+        #self.obj_form.tw_plan_ctas.cellClicked.connect(self.seleccion_item_plan)
+        self.obj_form.btn_eliminar.clicked.connect(self.eliminar)
+
+
 
     def modificar(self):
-        count=0
-        for item in self.lista_plan_cuentas:
-            if self.index == count :
-                obj_plan_cta = E_plan_cuentas()
-                obj_plan_cta.actualizar(item.id_cuenta,self.obj_form.lne_codigo.text(),self.obj_form.lne_descripcion.text())
-            count = count + 1
+        #count=0
+        #for item in self.obj_form.tw_plan_ctas.selectionModel().selectedIndexes():
+        indexes = [QPersistentModelIndex(index) for index in self.obj_form.tw_plan_ctas.selectionModel().selectedRows()]
+        for index in indexes:
+            id = int(self.obj_form.tw_plan_ctas.model().data(self.obj_form.tw_plan_ctas.model().index(index.row(), 3)))
+            codigo = self.obj_form.tw_plan_ctas.model().data(self.obj_form.tw_plan_ctas.model().index(index.row(), 0))
+            descripcion = self.obj_form.tw_plan_ctas.model().data(self.obj_form.tw_plan_ctas.model().index(index.row(), 1))
+            inflacion=bool(self.obj_form.tw_plan_ctas.model().data(self.obj_form.tw_plan_ctas.model().index(index.row(), 2)))
+            obj_plan_cta = E_plan_cuentas()
+            #print(inflacion)
+            obj_plan_cta.actualizar(id, codigo, descripcion,inflacion)
+            #count = count + 1
 
-    def seleccion_item_plan(self,clickedIndex):
+        self.recargar_grilla()
+
+    #def seleccion_item_plan(self,clickedIndex):
         #pyqtRemoveInputHook()
         #import pdb; pdb.set_trace()
-        self.index = clickedIndex
-        twi0 = self.obj_form.tw_plan_ctas.item(clickedIndex,0)
-        codigo = twi0.text()
-        twi1 = self.obj_form.tw_plan_ctas.item(clickedIndex,1)
-        descripcion = twi1.text()
-        self.obj_form.lne_codigo.setText(codigo)
-        self.obj_form.lne_descripcion.setText(descripcion)
+    #    self.index = clickedIndex
+    #    twi0 = self.obj_form.tw_plan_ctas.item(clickedIndex,0)
+    #    self.codigo = twi0.text()
+    #    twi1 = self.obj_form.tw_plan_ctas.item(clickedIndex,1)
+    #    descripcion = twi1.text()
+    #    self.obj_form.lne_codigo.setText(self.codigo)
+    #    self.obj_form.lne_descripcion.setText(descripcion)
 
 
     def agregar(self):
@@ -46,19 +58,50 @@ class plan_cuentas(QDialog):
         self.obj_form.tw_plan_ctas.insertRow(rowPosition)
         self.obj_form.tw_plan_ctas.setItem(rowPosition , 0, QTableWidgetItem(self.obj_form.lne_codigo.text()))
         self.obj_form.tw_plan_ctas.setItem(rowPosition , 1, QTableWidgetItem(self.obj_form.lne_descripcion.text()))
+        self.obj_form.tw_plan_ctas.setItem(rowPosition , 2, QTableWidgetItem(self.obj_form.cbx_inflacion.currentText()))
+
         obj_plan_cta = E_plan_cuentas()
         obj_plan_cta.codigo =self.obj_form.lne_codigo.text()
         obj_plan_cta.descripcion = self.obj_form.lne_descripcion.text()
         obj_plan_cta.id_cliente = self.obj_cliente.id_cliente
-        obj_plan_cta.guardar(obj_plan_cta)
-        msgBox = QMessageBox()
-        msgBox.setWindowTitle("Atencion")
-        msgBox.setText('Se grabo correctamente')
-        msgBox.exec_()
+        obj_plan_cta.inflacion = self.obj_form.cbx_inflacion.currentText()
 
+        obj_plan_cta.guardar(obj_plan_cta)
+
+        self.obj_form.lne_descripcion.setText("")
+
+        self.recargar_grilla()
 
     def eliminar(self):
-        a=1
+        w = QWidget()
+
+        indexes = [QPersistentModelIndex(index) for index in self.obj_form.tw_plan_ctas.selectionModel().selectedRows()]
+        if len(indexes) > 1:
+            result = QMessageBox.question(w, 'Alerta', "¿Desea eliminar los planes de cuenta?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+        else:
+            result = QMessageBox.question(w, 'Alerta', "¿Desea eliminar el plan de cuenta?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+
+        if result == QMessageBox.Yes:
+            obj_plan_cuentas = E_plan_cuentas()
+            #    if self.lista_plan_cuentas != 'False':
+            #        for item in self.lista_plan_cuentas:
+            #            if(item.codigo == self.codigo ):
+            #                obj_plan_cuentas.eliminar(item.id_cuenta)
+            diccionario_ctas = {}
+            for index in indexes:
+                id = int(self.obj_form.tw_plan_ctas.model().data(self.obj_form.tw_plan_ctas.model().index(index.row(), 3)))
+                resultado = obj_plan_cuentas.eliminar(id)
+
+                if resultado:
+                    diccionario_ctas[self.obj_form.tw_plan_ctas.model().data(self.obj_form.tw_plan_ctas.model().index(index.row(), 0))] = self.obj_form.tw_plan_ctas.model().data(self.obj_form.tw_plan_ctas.model().index(index.row(), 1))
+                    print("Se ha eliminado la cuenta con ID " + str(id))
+                else:
+                    del diccionario_ctas[self.obj_form.tw_plan_ctas.model().data(self.obj_form.tw_plan_ctas.model().index(index.row(), 0))]
+                    print(resultado)
+            QMessageBox.about(self, "Acción realizada", "Se han eliminado los siguientes registros: " + str(diccionario_ctas))
+
+            self.recargar_grilla()
+
 
     def limpiar(self):
         self.obj_cliente=""
@@ -83,11 +126,11 @@ class plan_cuentas(QDialog):
                 msgBox.setText('Cliente OK')
                 msgBox.exec_()
                 self.obj_form.lne_razon_social.setText(self.obj_cliente.razon_social)
-                self.cargar_grilla(self.obj_cliente )
+                self.cargar_grilla(self.obj_cliente)
 
         elif self.obj_form.lne_razon_social.text() !="":
             razon_social= self.obj_form.lne_razon_social.text()
-            obj_e_cliente= E_proveedor()
+            obj_e_cliente= E_cliente()
             self.obj_cliente = obj_e_cliente.get_cliente_razon_social(razon_social)
             if self.obj_cliente == False :
                 #"cliente encontrado"
@@ -107,19 +150,12 @@ class plan_cuentas(QDialog):
                 self.obj_form.tw_plan_ctas.insertRow(rowPosition)
                 self.obj_form.tw_plan_ctas.setItem(rowPosition , 0, QTableWidgetItem(str(item.codigo)))
                 self.obj_form.tw_plan_ctas.setItem(rowPosition , 1, QTableWidgetItem(item.descripcion))
+                self.obj_form.tw_plan_ctas.setItem(rowPosition , 2, QTableWidgetItem(str(item.inflacion)))
+                self.obj_form.tw_plan_ctas.setItem(rowPosition , 3, QTableWidgetItem(str(item.id_cuenta)))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def recargar_grilla(self):
+        self.limpiar()
+        cuit = self.obj_form.lne_cuit.text()
+        obj_e_cliente = E_cliente()
+        self.obj_cliente = obj_e_cliente.get_cliente_cuit_cuil(cuit)
+        self.cargar_grilla(self.obj_cliente)

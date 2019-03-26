@@ -30,4 +30,8 @@ FORMS    += mainwindow.ui \
     form_plan_cuentas.ui \
     form_cuentas.ui \
     form_asiento.ui \
-    form_cuentas_nuevo.ui
+    form_cuentas_nuevo.ui \
+    form_reporte_diario_gral.ui \
+    form_reporte_sumas_y_saldos.ui \
+    form_reporte_libro_mayor.ui \
+    form_inflacion.ui

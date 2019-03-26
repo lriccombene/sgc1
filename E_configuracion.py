@@ -1,11 +1,13 @@
 class configuracion(object):
     def config(self):
-        cadena = 'postgresql://postgres:slam2016@localhost:5432/sgc'
+        cadena = 'postgresql://postgres:slam2016@localhost:5432/sgcinflacion'
+        #cadena = 'postgresql://vsoftcoo_slam2016:Slamcoop2016@postgres.cicuxlbsejat.us-east-2.rds.amazonaws.com:5432/sgc'
         return cadena
 
     #lugar donde se descargan archivos local
     def ruta(self):
-        cadena="/home/user/Documentos/sgc/sgc20180210"
+        
+        cadena="/home/slam2016/Documentos/slam/SGC_Vsoft/testInflacion"
         return cadena
     #lugar de donde se obtienen los archivos del servidor
     def ruta_server(self):

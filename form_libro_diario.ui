@@ -7,26 +7,50 @@
     <x>0</x>
     <y>0</y>
     <width>798</width>
-    <height>558</height>
+    <height>559</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>798</width>
+    <height>559</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>798</width>
+    <height>559</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Libro Diario</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: rgb(3, 3, 3);
-background-color: rgb(44, 43, 58);
-font: 10pt &quot;Liberation Sans&quot;;
-color: rgb(252, 252, 252);
-selection-background-color: rgb(155, 155, 185);</string>
+   <string notr="true">font: 10pt &quot;Liberation Sans&quot;;
+color: rgb(0, 0, 0);
+background-color: rgb(156, 156, 156);
+selection-background-color: rgb(164, 190, 221);
+selection-color: rgb(0, 0, 0);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout_15">
+    <layout class="QHBoxLayout" name="horizontalLayout_17">
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
-       <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_15">
+       <item alignment="Qt::AlignLeft">
         <widget class="QLabel" name="label_15">
+         <property name="minimumSize">
+          <size>
+           <width>75</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>75</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="text">
           <string>CUIT / CUIL: </string>
          </property>
@@ -55,10 +79,23 @@ color: rgb(0, 0, 0);</string>
          </property>
         </widget>
        </item>
+       <item>
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
       </layout>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
+      <layout class="QHBoxLayout" name="horizontalLayout_16">
        <item>
         <widget class="QLabel" name="label_16">
          <property name="text">
@@ -89,34 +126,28 @@ color: rgb(0, 0, 0);</string>
       </layout>
      </item>
      <item>
-      <spacer name="horizontalSpacer_12">
+      <widget class="Line" name="line">
        <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+        <enum>Qt::Vertical</enum>
        </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
+      </widget>
      </item>
-     <item alignment="Qt::AlignBottom">
+     <item>
       <widget class="QPushButton" name="btn_buscar">
        <property name="minimumSize">
         <size>
-         <width>0</width>
-         <height>25</height>
+         <width>75</width>
+         <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>16777215</width>
-         <height>25</height>
+         <width>75</width>
+         <height>50</height>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(64, 63, 78);</string>
+        <string notr="true">background-color: rgb(119, 149, 177);</string>
        </property>
        <property name="text">
         <string>Buscar</string>
@@ -125,7 +156,7 @@ color: rgb(0, 0, 0);</string>
      </item>
     </layout>
    </item>
-   <item row="1" column="0">
+   <item row="2" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="styleSheet">
       <string notr="true">QTabWidget{
@@ -150,6 +181,19 @@ color: rgb(0, 0, 0);
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0">
         <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
          <item>
           <widget class="QLabel" name="label">
            <property name="text">
@@ -191,6 +235,9 @@ color: rgb(0, 0, 0);</string>
              <height>25</height>
             </size>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(119, 149, 177);</string>
+           </property>
            <property name="text">
             <string>Buscar</string>
            </property>
@@ -200,6 +247,13 @@ color: rgb(0, 0, 0);</string>
        </item>
        <item row="1" column="0">
         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="Line" name="line_5">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLabel" name="label_3">
            <property name="text">
@@ -219,10 +273,24 @@ color: rgb(0, 0, 0);</string>
             <property name="text">
              <string>Fecha</string>
             </property>
+            <property name="background">
+             <color>
+              <red>156</red>
+              <green>183</green>
+              <blue>206</blue>
+             </color>
+            </property>
            </column>
            <column>
             <property name="text">
              <string>Descripción</string>
+            </property>
+            <property name="background">
+             <color>
+              <red>156</red>
+              <green>183</green>
+              <blue>206</blue>
+             </color>
             </property>
            </column>
           </widget>
@@ -245,7 +313,7 @@ color: rgb(0, 0, 0);</string>
            <item alignment="Qt::AlignRight">
             <widget class="QPushButton" name="btn_nuevo">
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(64, 63, 78);</string>
+              <string notr="true">background-color: rgb(119, 149, 177);</string>
              </property>
              <property name="text">
               <string>Agregar</string>
@@ -255,7 +323,7 @@ color: rgb(0, 0, 0);</string>
            <item alignment="Qt::AlignRight">
             <widget class="QPushButton" name="btn_modificar">
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(64, 63, 78);</string>
+              <string notr="true">background-color: rgb(119, 149, 177);</string>
              </property>
              <property name="text">
               <string>Modificar</string>
@@ -265,7 +333,7 @@ color: rgb(0, 0, 0);</string>
            <item alignment="Qt::AlignRight">
             <widget class="QPushButton" name="btn_eliminar">
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(64, 63, 78);</string>
+              <string notr="true">background-color: rgb(119, 149, 177);</string>
              </property>
              <property name="text">
               <string>Borrar</string>
@@ -278,6 +346,13 @@ color: rgb(0, 0, 0);</string>
        </item>
        <item row="2" column="0">
         <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="Line" name="line_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLabel" name="label_4">
            <property name="text">
@@ -309,22 +384,57 @@ color: rgb(0, 0, 0);</string>
             <property name="text">
              <string>Código</string>
             </property>
+            <property name="background">
+             <color>
+              <red>156</red>
+              <green>183</green>
+              <blue>206</blue>
+             </color>
+            </property>
            </column>
            <column>
             <property name="text">
              <string>Descripción</string>
+            </property>
+            <property name="background">
+             <color>
+              <red>156</red>
+              <green>183</green>
+              <blue>206</blue>
+             </color>
             </property>
            </column>
            <column>
             <property name="text">
              <string>Neto</string>
             </property>
+            <property name="background">
+             <color>
+              <red>156</red>
+              <green>183</green>
+              <blue>206</blue>
+             </color>
+            </property>
            </column>
            <column>
             <property name="text">
              <string>Haber</string>
             </property>
+            <property name="background">
+             <color>
+              <red>156</red>
+              <green>183</green>
+              <blue>206</blue>
+             </color>
+            </property>
            </column>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="line_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
           </widget>
          </item>
          <item>
@@ -345,7 +455,7 @@ color: rgb(0, 0, 0);</string>
            <item alignment="Qt::AlignRight">
             <widget class="QPushButton" name="btn_nueva_cta">
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(64, 63, 78);</string>
+              <string notr="true">background-color: rgb(119, 149, 177);</string>
              </property>
              <property name="text">
               <string>Agregar</string>
@@ -355,7 +465,7 @@ color: rgb(0, 0, 0);</string>
            <item alignment="Qt::AlignRight">
             <widget class="QPushButton" name="btn_modificar_cta">
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(64, 63, 78);</string>
+              <string notr="true">background-color: rgb(119, 149, 177);</string>
              </property>
              <property name="text">
               <string>Modificar</string>
@@ -365,7 +475,7 @@ color: rgb(0, 0, 0);</string>
            <item alignment="Qt::AlignRight">
             <widget class="QPushButton" name="btn_eliminar_cta">
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(64, 63, 78);</string>
+              <string notr="true">background-color: rgb(119, 149, 177);</string>
              </property>
              <property name="text">
               <string>Borrar</string>
@@ -378,6 +488,13 @@ color: rgb(0, 0, 0);</string>
        </item>
       </layout>
      </widget>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="Line" name="line_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
     </widget>
    </item>
   </layout>

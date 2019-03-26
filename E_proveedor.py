@@ -66,3 +66,11 @@ class E_proveedor(base):
             self.session.execute(u)
             self.session.commit()
             self.session.close()
+      def eliminar(self, id_proveedor):
+          obj_proveedor = self.session.query(E_proveedor).filter_by(id_proveedor=str(id_proveedor)).first()
+          self.session.delete(obj_proveedor)
+          self.session.commit()
+          return True
+
+
+

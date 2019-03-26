@@ -11,14 +11,15 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_form_cuentas_nuevo(object):
     def setupUi(self, form_cuentas_nuevo):
         form_cuentas_nuevo.setObjectName("form_cuentas_nuevo")
-        form_cuentas_nuevo.resize(400, 183)
-        form_cuentas_nuevo.setStyleSheet("color: rgb(3, 3, 3);\n"
-"background-color: rgb(44, 43, 58);\n"
-"font: 10pt \"Liberation Sans\";\n"
-"color: rgb(252, 252, 252);\n"
-"selection-background-color: rgb(155, 155, 185);")
+        form_cuentas_nuevo.resize(410, 194)
+        form_cuentas_nuevo.setStyleSheet("font: 10pt \"Liberation Sans\";\n"
+"color: rgb(0, 0, 0);\n"
+"background-color: rgb(156, 156, 156);\n"
+"selection-background-color: rgb(164, 190, 221);\n"
+"selection-color: rgb(0, 0, 0);")
+        self.gridLayout = QtWidgets.QGridLayout(form_cuentas_nuevo)
+        self.gridLayout.setObjectName("gridLayout")
         self.tabWidget = QtWidgets.QTabWidget(form_cuentas_nuevo)
-        self.tabWidget.setGeometry(QtCore.QRect(20, 10, 365, 160))
         self.tabWidget.setStyleSheet("QTabWidget{\n"
 "background-color: rgb(123, 121, 143);\n"
 "}\n"
@@ -91,10 +92,12 @@ class Ui_form_cuentas_nuevo(object):
         self.btn_guardar = QtWidgets.QPushButton(self.tab)
         self.btn_guardar.setMinimumSize(QtCore.QSize(0, 25))
         self.btn_guardar.setMaximumSize(QtCore.QSize(16777215, 25))
+        self.btn_guardar.setStyleSheet("background-color: rgb(119, 149, 177);")
         self.btn_guardar.setObjectName("btn_guardar")
         self.verticalLayout_2.addWidget(self.btn_guardar, 0, QtCore.Qt.AlignRight)
         self.gridLayout_2.addLayout(self.verticalLayout_2, 0, 0, 1, 1)
         self.tabWidget.addTab(self.tab, "")
+        self.gridLayout.addWidget(self.tabWidget, 0, 0, 1, 1)
 
         self.retranslateUi(form_cuentas_nuevo)
         self.tabWidget.setCurrentIndex(0)
@@ -102,7 +105,7 @@ class Ui_form_cuentas_nuevo(object):
 
     def retranslateUi(self, form_cuentas_nuevo):
         _translate = QtCore.QCoreApplication.translate
-        form_cuentas_nuevo.setWindowTitle(_translate("form_cuentas_nuevo", "Form"))
+        form_cuentas_nuevo.setWindowTitle(_translate("form_cuentas_nuevo", "Nueva Cuenta"))
         self.label.setText(_translate("form_cuentas_nuevo", "Cuenta:"))
         self.label_2.setText(_translate("form_cuentas_nuevo", "Debe:"))
         self.label_3.setText(_translate("form_cuentas_nuevo", "Haber: "))

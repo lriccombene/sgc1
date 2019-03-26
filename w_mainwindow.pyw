@@ -17,6 +17,10 @@ from w_form_libro_iva_ventas_nuevo import libro_iva_ventas_nuevo
 from w_form_plan_cuentas import plan_cuentas
 from w_form_proveedores import proveedores
 from w_form_cuentas_nuevas import cuentas_nuevas
+from w_form_reporte_diario_gral import reporte_diario_general
+from w_form_reporte_libro_mayor import reporte_libro_mayor
+from w_form_reporte_sumas_y_saldos import reporte_sumas_y_saldos
+from w_form_inflacion import inflacion
 
 
 
@@ -31,17 +35,64 @@ class Mainwindow(QMainWindow):
         self.obj_form_main.actionClientes.triggered.connect(self.clientes)
         self.obj_form_main.actionBuscar_Cuenta.triggered.connect(self.cuentas)
         self.obj_form_main.actionNueva_Cuenta.triggered.connect(self.cuentas_nuevas)
-
         self.obj_form_main.actionEjercicio.triggered.connect(self.ejercicio)
         self.obj_form_main.actionNuevo_Ejercicio.triggered.connect(self.ejercicio_nuevo)
-        self.obj_form_main.actionLIBRO_DIARIO.triggered.connect(self.libro_diario)
+        #self.obj_form_main.actionLIBRO_DIARIO.triggered.connect(self.libro_diario)
         self.obj_form_main.actionBuscar.triggered.connect(self.libro_iva_compras)
         self.obj_form_main.actionNuevo_2.triggered.connect(self.libro_iva_compras_nuevo)
         self.obj_form_main.actionBuscar_2.triggered.connect(self.libro_iva_ventas)
         self.obj_form_main.actionNuevo.triggered.connect(self.libro_iva_ventas_nuevo)
         self.obj_form_main.actionPlan_Cuentas.triggered.connect(self.plan_cuentas)
         self.obj_form_main.actionAlta_de_proveedores.triggered.connect(self.proveedores)
+        self.obj_form_main.actionLibro_Diario_General.triggered.connect(self.reporte_diario_gral)
+        self.obj_form_main.actionLibro_Mayor_2.triggered.connect(self.reporte_libro_mayor)
+        self.obj_form_main.actionSumas_y_Saldos.triggered.connect(self.reporte_sumas_saldos)
+        self.obj_form_main.actionInflacion.triggered.connect(self.inflacion)
+        self.obj_form_main.btn_clientes.clicked.connect(self.abrir_clientes)
+        self.obj_form_main.btn_ejercicios.clicked.connect(self.abrir_ejercicios)
+        self.obj_form_main.btn_libros.clicked.connect(self.abrir_libro_compras)
+        self.obj_form_main.btn_libro_ventas.clicked.connect(self.abrir_libro_ventas)
+        self.obj_form_main.btn_proveedores.clicked.connect(self.abrir_proveedores)
+        self.obj_form_main.btn_reporte_diario.clicked.connect(self.abrir_rep_diario_gral)
+        self.obj_form_main.btn_reporte_saldos.clicked.connect(self.abrir_rep_sum_sal)
+        self.obj_form_main.btn_reporte_mayor.clicked.connect(self.abrir_rep_lib_may)
 
+
+    def inflacion(self):
+        self.form_inflacion= inflacion()
+        self.form_inflacion.show()
+
+    def abrir_rep_diario_gral(self):
+        self.form_reporte_diario_gral = reporte_diario_general()
+        self.form_reporte_diario_gral.show()
+
+    def abrir_rep_sum_sal(self):
+        self.form_reporte_sumas_y_saldos = reporte_sumas_y_saldos()
+        self.form_reporte_sumas_y_saldos.show()
+
+    def abrir_rep_lib_may(self):
+        self.form_reporte_libro_mayor = reporte_libro_mayor()
+        self.form_reporte_libro_mayor.show()
+
+    def abrir_proveedores(self):
+        self.form_proveedores = proveedores()
+        self.form_proveedores.show()
+
+    def abrir_libro_ventas(self):
+        self.form_libro_iva_ventas_nuevo = libro_iva_ventas_nuevo()
+        self.form_libro_iva_ventas_nuevo.show()
+
+    def abrir_libro_compras(self):
+        self.form_libro_iva_compras_nuevo = libro_iva_compras_nuevo()
+        self.form_libro_iva_compras_nuevo.show()
+
+    def abrir_ejercicios(self):
+        self.form_ejercicio_nuevo = ejercicio_nuevo()
+        self.form_ejercicio_nuevo.show()
+
+    def abrir_clientes(self):
+        self.form_clientes = clientes()
+        self.form_clientes.show()
 
     def cuentas_nuevas(self):
         self.form_cuentas_nuevas = cuentas_nuevas()
@@ -96,6 +147,20 @@ class Mainwindow(QMainWindow):
         self.form_proveedores = proveedores()
         self.form_proveedores.show()
 
+
+    def reporte_diario_gral(self):
+        self.form_reporte_diario_gral = reporte_diario_general()
+        self.form_reporte_diario_gral.show()
+
+
+    def reporte_libro_mayor(self):
+        self.form_reporte_libro_mayor = reporte_libro_mayor()
+        self.form_reporte_libro_mayor.show()
+
+
+    def reporte_sumas_saldos(self):
+        self.form_reporte_sumas_y_saldos = reporte_sumas_y_saldos()
+        self.form_reporte_sumas_y_saldos.show()
 
 
 app = QApplication(sys.argv)

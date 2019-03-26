@@ -30,25 +30,29 @@ class asiento(QDialog):
             if item.descripcion == self.obj_form.cbx_ejercicio.currentText():
                 obj_ejercicio=item
 
+        #pyqtRemoveInputHook()
+        #import pdb; pdb.set_trace()
         obj_ejer_detalle = E_ejercicio_detalle()
         list_ejer_detalle = obj_ejer_detalle.buscar_ejercicios_id_ejercicio(obj_ejercicio.id_ejercicio)
         obj_ejer_detalle = ""
         for item in list_ejer_detalle:
             if item.mes == self.obj_form.cbx_mes.currentText():
-                obj_ejer_detalle =item
+                obj_ejer_detalle = item
 
-        #pyqtRemoveInputHook()
-        #import pdb; pdb.set_trace()
+
         obj_asiento = E_asiento()
         obj_asiento.id_cliente = self.obj_cliente.id_cliente
         obj_asiento.id_ejercicio = obj_ejercicio.id_ejercicio
+        #pyqtRemoveInputHook()
+        #import pdb; pdb.set_trace()
         obj_asiento.id_ejercicio_detalle = obj_ejer_detalle.id_ejercicio_detalle
         obj_asiento.fecha = self.obj_form.dte_fecha.text()
         obj_asiento.descripcion = self.obj_form.lne_descripcion.text()
+        obj_asiento.primer_asiento= self.obj_form.cbx_primer_asiento.currentText()
         obj_asiento.guardar(obj_asiento)
         msgBox = QMessageBox()
         msgBox.setWindowTitle("Atencion")
-        msgBox.setText('Se grabo correctamente')
+        msgBox.setText('Asiento OK')
         msgBox.exec_()
 
 
@@ -70,7 +74,7 @@ class asiento(QDialog):
             else:
                 msgBox = QMessageBox()
                 msgBox.setWindowTitle("Atencion")
-                msgBox.setText('Cliente se encuentra')
+                msgBox.setText('Cliente OK')
                 msgBox.exec_()
                 self.obj_form.lne_razon_social.setText(self.obj_cliente.razon_social)
                 obj_e_ejercicio = E_ejercicio()

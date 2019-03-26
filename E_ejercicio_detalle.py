@@ -14,7 +14,7 @@ class E_ejercicio_detalle(base):
       mes = Column(String)
       estado = Column(String)
       id_ejercicio =  Column(DateTime)
-      nro =  Column(DateTime)
+      nro =  Column(Integer)
       session=""
 
       # def __init__(self,id_party,create_date,write_uid,write_date,nombre,apellido,tipo,num_doc,estado_civil,num_cliente):

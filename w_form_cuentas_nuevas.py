@@ -26,7 +26,7 @@ class cuentas_nuevas(QDialog):
         self.lista_cuentas=obj_e_asiento.get_asiento_plan_cuenta(id_asiento)
         for item in self.lista_cuentas:
             #self.obj_form.cbx_cuenta
-            self.obj_form.cbx_cuenta.addItem(item[0])
+            self.obj_form.cbx_cuenta.addItem(item[2]+ " - " + item[0])
 
     def guardar(self):
         #pyqtRemoveInputHook()
@@ -36,16 +36,19 @@ class cuentas_nuevas(QDialog):
         lista_cuentas=obj_e_asiento.get_asiento_plan_cuenta(self.id_asiento)
 
         for item in lista_cuentas:
-            if item[0] == self.obj_form.cbx_cuenta.currentText():
+            combo_string= self.obj_form.cbx_cuenta.currentText()
+            pos_caracter= combo_string.find("-") +2
+            descripcion_plan= combo_string[(pos_caracter):]
+            if item[0] == descripcion_plan:
                 obj_e_cuenta.id_plan_cuentas = item[1]
-
-        obj_e_cuenta.debe = self.obj_form.lne_haber.text()
-        obj_e_cuenta.haber = self.obj_form.lne_debe.text()
+        
+        obj_e_cuenta.debe = self.obj_form.lne_debe.text() 
+        obj_e_cuenta.haber = self.obj_form.lne_haber.text()
         obj_e_cuenta.id_asiento =  self.id_asiento
         obj_e_cuenta.guardar(obj_e_cuenta)
         msgBox = QMessageBox()
         msgBox.setWindowTitle("Atencion")
-        msgBox.setText('Se grabo correctamente')
+        msgBox.setText('Cuenta OK')
         msgBox.exec_()
 
 
