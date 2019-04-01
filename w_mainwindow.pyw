@@ -21,7 +21,7 @@ from w_form_reporte_diario_gral import reporte_diario_general
 from w_form_reporte_libro_mayor import reporte_libro_mayor
 from w_form_reporte_sumas_y_saldos import reporte_sumas_y_saldos
 from w_form_inflacion import inflacion
-
+from w_form_balancear_asiento import balancear_asiento
 
 
 class Mainwindow(QMainWindow):
@@ -48,6 +48,7 @@ class Mainwindow(QMainWindow):
         self.obj_form_main.actionLibro_Mayor_2.triggered.connect(self.reporte_libro_mayor)
         self.obj_form_main.actionSumas_y_Saldos.triggered.connect(self.reporte_sumas_saldos)
         self.obj_form_main.actionInflacion.triggered.connect(self.inflacion)
+        self.obj_form_main.actionBalancear_Asientos.triggered.connect(self.balancear_asiento)
         self.obj_form_main.btn_clientes.clicked.connect(self.abrir_clientes)
         self.obj_form_main.btn_ejercicios.clicked.connect(self.abrir_ejercicios)
         self.obj_form_main.btn_libros.clicked.connect(self.abrir_libro_compras)
@@ -57,6 +58,9 @@ class Mainwindow(QMainWindow):
         self.obj_form_main.btn_reporte_saldos.clicked.connect(self.abrir_rep_sum_sal)
         self.obj_form_main.btn_reporte_mayor.clicked.connect(self.abrir_rep_lib_may)
 
+    def balancear_asiento(self):
+        self.form_balancear = balancear_asiento()
+        self.form_balancear.show()
 
     def inflacion(self):
         self.form_inflacion= inflacion()

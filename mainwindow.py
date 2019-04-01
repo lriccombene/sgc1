@@ -2,8 +2,7 @@
 
 # Form implementation generated from reading ui file 'mainwindow.ui'
 #
-# Created: Sat Mar 23 15:24:30 2019
-#      by: PyQt5 UI code generator 5.2.1
+# Created by: PyQt5 UI code generator 5.9.2
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -23,10 +22,14 @@ class Ui_MainWindow(object):
         self.centralWidget = QtWidgets.QWidget(MainWindow)
         self.centralWidget.setObjectName("centralWidget")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.centralWidget)
+        self.gridLayout_2.setContentsMargins(11, 11, 11, 11)
+        self.gridLayout_2.setSpacing(6)
         self.gridLayout_2.setObjectName("gridLayout_2")
         self.gridLayout = QtWidgets.QGridLayout()
+        self.gridLayout.setSpacing(6)
         self.gridLayout.setObjectName("gridLayout")
         self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setSpacing(6)
         self.verticalLayout.setObjectName("verticalLayout")
         self.btn_clientes = QtWidgets.QPushButton(self.centralWidget)
         self.btn_clientes.setMinimumSize(QtCore.QSize(61, 55))
@@ -201,6 +204,8 @@ class Ui_MainWindow(object):
         self.actionNueva_Cuenta.setObjectName("actionNueva_Cuenta")
         self.actionInflacion = QtWidgets.QAction(MainWindow)
         self.actionInflacion.setObjectName("actionInflacion")
+        self.actionBalancear_Asientos = QtWidgets.QAction(MainWindow)
+        self.actionBalancear_Asientos.setObjectName("actionBalancear_Asientos")
         self.menuCLIENTE.addAction(self.actionClientes)
         self.menuCuentas.addAction(self.actionBuscar_Cuenta)
         self.menuASIENTOS.addAction(self.actionEjercicio)
@@ -209,6 +214,8 @@ class Ui_MainWindow(object):
         self.menuASIENTOS.addAction(self.actionAsiento)
         self.menuASIENTOS.addAction(self.actionPlan_Cuentas)
         self.menuASIENTOS.addAction(self.actionInflacion)
+        self.menuASIENTOS.addSeparator()
+        self.menuASIENTOS.addAction(self.actionBalancear_Asientos)
         self.menuREPORTES.addAction(self.actionLibro_Diario_General)
         self.menuREPORTES.addAction(self.actionSumas_y_Saldos)
         self.menuREPORTES.addAction(self.actionLibro_Mayor_2)
@@ -262,4 +269,5 @@ class Ui_MainWindow(object):
         self.actionLibro_Mayor_2.setText(_translate("MainWindow", "Libro Mayor"))
         self.actionNueva_Cuenta.setText(_translate("MainWindow", "Nueva Cuenta"))
         self.actionInflacion.setText(_translate("MainWindow", "Inflacion"))
+        self.actionBalancear_Asientos.setText(_translate("MainWindow", "Balancear Asientos"))
 

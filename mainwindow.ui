@@ -377,6 +377,8 @@ background-color: rgb(168, 168, 168);</string>
     <addaction name="actionAsiento"/>
     <addaction name="actionPlan_Cuentas"/>
     <addaction name="actionInflacion"/>
+    <addaction name="separator"/>
+    <addaction name="actionBalancear_Asientos"/>
    </widget>
    <widget class="QMenu" name="menuREPORTES">
     <property name="title">
@@ -524,6 +526,11 @@ background-color: rgb(168, 168, 168);</string>
   <action name="actionInflacion">
    <property name="text">
     <string>Inflacion</string>
+   </property>
+  </action>
+  <action name="actionBalancear_Asientos">
+   <property name="text">
+    <string>Balancear Asientos</string>
    </property>
   </action>
  </widget>
