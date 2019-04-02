@@ -5,12 +5,15 @@ from form_balancear_asiento import Ui_form_balancear_asiento
 from PyQt5.QtCore import pyqtRemoveInputHook
 from E_asiento import E_asiento
 from E_cliente import E_cliente
+from E_ejercicio import E_ejercicio
 
 
 
 class balancear_asiento(QWidget):
     obj_form = Ui_form_balancear_asiento()
     obj_cliente = ""
+    lista_ejercicio=""
+
 
     def __init__(self):
         QDialog.__init__(self)
@@ -23,7 +26,22 @@ class balancear_asiento(QWidget):
 
 
     def calcular(self):
-        a=1
+        obj_ejercicio = ""
+        for item in self.lista_ejercicio:
+                if item.descripcion == self.obj_form.cbx_ejercicio.currentText():
+                    obj_ejercicio=item
+        obj_asiento= E_asiento()
+        lst_asient_no_balanc= obj_asiento.get_asient_no_balanc(str(obj_ejercicio.id_ejercicio))
+        for item in lst_asient_no_balanc:
+            if item.totaldebe != item.totalhaber:
+                rowPosition = self.obj_form.tb_asientos.rowCount()
+                self.obj_form.tb_asientos.insertRow(rowPosition)
+                self.obj_form.tb_asientos.setItem(rowPosition, 0, QTableWidgetItem(str(item.fecha)))
+                self.obj_form.tb_asientos.setItem(rowPosition, 1, QTableWidgetItem(str(item.descripcion)))
+                self.obj_form.tb_asientos.setItem(rowPosition, 2, QTableWidgetItem(str(item.totaldebe)))
+                self.obj_form.tb_asientos.setItem(rowPosition, 3, QTableWidgetItem(str(item.totalhaber)))
+
+
 
     def buscar(self):
         # self.limpiar()
@@ -50,7 +68,7 @@ class balancear_asiento(QWidget):
 
         elif self.obj_form.lne_razon_social.text() != "":
             razon_social = self.obj_form.lne_razon_social.text()
-            obj_e_cliente = E_proveedor()
+            obj_e_cliente = E_cliente()
             self.obj_cliente = obj_e_cliente.get_cliente_razon_social(razon_social)
             if self.obj_cliente == False:
                 # "cliente encontrado"
