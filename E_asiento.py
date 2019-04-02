@@ -127,5 +127,18 @@ class E_asiento(base):
         except :
           self.session.close()
           return False
+      
+      def get_asient_no_balanc(self,id_ejercicio):
+        #pyqtRemoveInputHook()
+        #import pdb; pdb.set_trace()
 
+        sql= text("select a.fecha , a.descripcion, sum(c.debe) totaldebe,sum(c.haber) totalhaber from asiento a "+
+                  " inner join cuentas c on a.id_asiento=c.id_asiento " +
+                  " where id_ejercicio=" +str(id_ejercicio)+ " group by a.descripcion, a.fecha order by a.fecha")
+        result = self.session.execute(sql)
+        try:
+            return result
+        except :
+            self.session.close()
+            return False
 
