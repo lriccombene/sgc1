@@ -2,7 +2,8 @@
 
 # Form implementation generated from reading ui file 'form_balancear_asiento.ui'
 #
-# Created by: PyQt5 UI code generator 5.9.2
+# Created: Tue Apr  2 10:32:15 2019
+#      by: PyQt5 UI code generator 5.2.1
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -30,12 +31,16 @@ class Ui_form_balancear_asiento(object):
         self.tb_asientos = QtWidgets.QTableWidget(form_balancear_asiento)
         self.tb_asientos.setGeometry(QtCore.QRect(60, 260, 551, 192))
         self.tb_asientos.setObjectName("tb_asientos")
-        self.tb_asientos.setColumnCount(2)
+        self.tb_asientos.setColumnCount(4)
         self.tb_asientos.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
         self.tb_asientos.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
         self.tb_asientos.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tb_asientos.setHorizontalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tb_asientos.setHorizontalHeaderItem(3, item)
         self.btn_calcular_asientos = QtWidgets.QPushButton(form_balancear_asiento)
         self.btn_calcular_asientos.setGeometry(QtCore.QRect(370, 150, 241, 25))
         self.btn_calcular_asientos.setObjectName("btn_calcular_asientos")
@@ -61,7 +66,7 @@ class Ui_form_balancear_asiento(object):
 
     def retranslateUi(self, form_balancear_asiento):
         _translate = QtCore.QCoreApplication.translate
-        form_balancear_asiento.setWindowTitle(_translate("form_balancear_asiento", "Form"))
+        form_balancear_asiento.setWindowTitle(_translate("form_balancear_asiento", "balancear asiento"))
         self.btn_buscar.setText(_translate("form_balancear_asiento", "Buscar"))
         self.label.setText(_translate("form_balancear_asiento", "CUIT:"))
         self.label_2.setText(_translate("form_balancear_asiento", "Razon Social:"))
@@ -69,6 +74,10 @@ class Ui_form_balancear_asiento(object):
         item.setText(_translate("form_balancear_asiento", "Fecha"))
         item = self.tb_asientos.horizontalHeaderItem(1)
         item.setText(_translate("form_balancear_asiento", "Asiento"))
+        item = self.tb_asientos.horizontalHeaderItem(2)
+        item.setText(_translate("form_balancear_asiento", "debe"))
+        item = self.tb_asientos.horizontalHeaderItem(3)
+        item.setText(_translate("form_balancear_asiento", "haber"))
         self.btn_calcular_asientos.setText(_translate("form_balancear_asiento", "Calcular Asientos"))
         self.label_3.setText(_translate("form_balancear_asiento", "Ejercicio :"))
 
