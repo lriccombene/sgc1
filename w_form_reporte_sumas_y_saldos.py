@@ -151,12 +151,25 @@ class reporte_sumas_y_saldos(QDialog):
                             resultado=""
                             for result in total_diezmil_padre:
                                 resultado = result
-
-                            total_resultado =Decimal(resultado[0])-Decimal(resultado[1])
+                            try:
+                                total_resultado =Decimal(resultado[0])-Decimal(resultado[1])
+                            except:
+                            	total_resultado =0
+                            deberesult=0
+                            try:
+                                deberesult=round(resultado[0],2)
+                            except:
+                                deberesult=0
+                            haberresult=0  
+                            try:
+                                haberresult=round(resultado[1],2)
+                            except:
+                                haberresult=0  
+                           
                             estiloCodigo4 = "<font size=6>" + str(item4[1]) + "</font>"
                             estiloDescripcion4 = "<font size=6>" + str(item4[2]) + " </font>"
-                            estilodebe4 =  "<font size=6>" + str(round(resultado[0],2)) + " </font>"
-                            estilohaber4 =  "<font size=6>" + str(round(resultado[1],2)) + " </font>"
+                            estilodebe4 =  "<font size=6>" + str(deberesult) + " </font>"
+                            estilohaber4 =  "<font size=6>" + str(haberresult) + " </font>"
                             estilosaldo4 = "<font size=6>" + str(round(total_resultado,2)) + " </font>"
                             estilosdeudor4="<font size=6>" + str("-") + " </font>"
                             estilosacredoor4="<font size=6>" + str("-") + " </font>"
@@ -205,11 +218,24 @@ class reporte_sumas_y_saldos(QDialog):
                             total_resultado =float(resultado[0])-float (resultado[1])
                         except:
                             total_resultado=0
+
+                                            #total_resultado =(resultado[0])-float (resultado[1])
+                        deberesult=0
+                        try:
+                            deberesult=round(resultado[0],2)
+                        except:
+                            deberesult=0
+                        haberresult=0  
+                        try:
+                            haberresult=round(resultado[1],2)
+                        except:
+                            haberresult=0  
+
                         
                         estiloCodigo3 = "<font size=6>" + str(item3[1]) + "</font>"
                         estiloDescripcion3 = "<font size=6>" + str(item3[2]) + " </font>"
-                        estilodebe3 =  "<font size=6>" + str(round(resultado[0],2)) + " </font>"
-                        estilohaber3 =  "<font size=6>" + str(round(resultado[1],2)) + " </font>"
+                        estilodebe3 =  "<font size=6>" + str(deberesult) + " </font>"
+                        estilohaber3 =  "<font size=6>" + str(haberresult) + " </font>"
                         estilosaldo3 = "<font size=6>" + str(round(total_resultado,2)) + " </font>"
                         estilosdeudor3="<font size=6>" + str("-") + " </font>"
                         estilosacredoor3="<font size=6>" + str("-") + " </font>"
@@ -237,10 +263,23 @@ class reporte_sumas_y_saldos(QDialog):
                     except:
                         total_resultado=0
                     #total_resultado =(resultado[0])-float (resultado[1])
+                    deberesult=0
+                    try:
+                        deberesult=round(resultado[0],2)
+                    except:
+                        deberesult=0
+                    haberresult=0  
+                    try:
+                        haberresult=round(resultado[1],2)
+                    
+                    except:
+                        haberresult=0  
+
+
                     estiloCodigo = "<font size=6>" + str(item2[1]) + "</font>"
                     estiloDescripcion = "<font size=6>" + str(item2[2]) + " </font>"
-                    estilodebe =  "<font size=6>" + str(round(resultado[0],2)) + " </font>"
-                    estilohaber =  "<font size=6>" + str(round(resultado[1],2)) + " </font>"
+                    estilodebe =  "<font size=6>" + str(deberesult) + " </font>"
+                    estilohaber =  "<font size=6>" + str(haberresult) + " </font>"
                     estilosaldo = "<font size=6>" + str(round(total_resultado,2)) + " </font>"
                     estilosdeudor="<font size=6>" + str("-") + " </font>"
                     estilosacredoor="<font size=6>" + str("-") + " </font>"
@@ -263,11 +302,22 @@ class reporte_sumas_y_saldos(QDialog):
                         total_resultado =float(resultado[0])-float (resultado[1])
                     except:
                         total_resultado=0
+
+                    deberesult=0
+                    try:
+                            deberesult=round(resultado[0],2)
+                    except:
+                            deberesult=0
+                    haberresult=0  
+                    try:
+                            haberresult=round(resultado[1],2)
+                    except:
+                            haberresult=0 
                         
                     estiloCodigo = "<font size=6>" + str(item2[1]) + "</font>"
                     estiloDescripcion = "<font size=6>" + str(item2[2]) + " </font>"
-                    estilodebe =  "<font size=6>" + str(round(resultado[0],2)) + " </font>"
-                    estilohaber =  "<font size=6>" + str(round(resultado[1],2)) + " </font>"
+                    estilodebe =  "<font size=6>" + str(deberesult) + " </font>"
+                    estilohaber =  "<font size=6>" + str(haberresult) + " </font>"
                     estilosaldo = "<font size=6>" + str(round(total_resultado,2)) + " </font>"
                     estilosdeudor="<font size=6>" + str("-") + " </font>"
                     estilosacredoor="<font size=6>" + str("-") + " </font>"
